@@ -1,17 +1,32 @@
 #include "ATM_System.h"
+#include "handler/SQLCommands.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-ATM_System::system_Init() 
+sqlite3* ATM_System::db = nullptr;
+SQLCommands* sql;
+bool ativo = true;
+
+void ATM_System::system_Init()
 {
-	int c = 0;
-	int ini = 1;
-
-	while (c)
+	while (ativo) 
 	{
-		if (ini) {
+		if (true) {
 			std::cout << "------------Welcome------------\n\n";
-			std::cout << "Insira seu cartao...";
-			ini = 0;
-		}
+			std::cout << "Insert your code...";      // for simulate inserting of card
+			std::cin >> code;
 
+			sql->selectData(code);
+		}
 	}
-}
+
+};
+
+void ATM_System::transferTo()
+{}
+
+void ATM_System::depositTo()
+{}
+
+void ATM_System::withdraw()
+{}

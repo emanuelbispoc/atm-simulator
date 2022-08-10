@@ -1,17 +1,15 @@
-class Feature
+#pragma once
+
+class Account
 {
 private:
-	int balance = 0;
+	float balance = 0.0;
 	int accontNumber = 0;
 	const char* holder;
 
 
 
 public:
-
-	void transferTo();
-	void depositTo();
-	void withdraw();
 
 	const char* getHolder() {
 		return this->holder;
@@ -21,11 +19,15 @@ public:
 		return this->accontNumber;
 	}
 
-	int getBalance() {
+	float getBalance() {
 		return this->balance;
 	}
 
 	void setBalance(int val) {
 		this->balance += val;
+	}
+
+	void setHolder(const char* holder) {
+		this->holder = holder;
 	}
 };
