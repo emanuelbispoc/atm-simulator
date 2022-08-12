@@ -1,10 +1,10 @@
 #include "ATM_System.h"
-#include "handler/SQLCommands.h"
+#include "handler/BankSystem.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 sqlite3* ATM_System::db = nullptr;
-SQLCommands* sql;
+BankSystem* bank;
 bool ativo = true;
 
 void ATM_System::system_Init()
@@ -16,7 +16,7 @@ void ATM_System::system_Init()
 			std::cout << "Insert your code...";      // for simulate inserting of card
 			std::cin >> code;
 
-			sql->selectData(code);
+			bank->selectData(code);
 		}
 	}
 

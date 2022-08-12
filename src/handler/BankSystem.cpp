@@ -1,6 +1,7 @@
-#include "SQLCommands.h"
+#include "BankSystem.h"
+#include "BankAccount.h"
 
-const char* SQLCommands::sql = nullptr;
+BankAccount acc;
 
 static int callback(void* data, int argc, char** argv, char** azColName) {
 
@@ -14,8 +15,9 @@ static int callback(void* data, int argc, char** argv, char** azColName) {
 	return 0;
 }
 
-void SQLCommands::selectData(std::string data)
+void BankSystem::selectData(std::string data)
 {
+	const char* sql;
 	int rc;
 	char* err;
 

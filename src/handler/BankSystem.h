@@ -1,12 +1,8 @@
 #pragma once
 #include "../ATM_System.h"
 
-class SQLCommands 
+class BankSystem
 {
-private:
-
-	static const char* sql;
-
 public:
 
 	static void updateData(std::string data);

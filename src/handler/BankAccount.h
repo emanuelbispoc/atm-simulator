@@ -1,6 +1,6 @@
 #pragma once
 
-class Account
+class BankAccount
 {
 private:
 	float balance = 0.0;
@@ -23,7 +23,7 @@ public:
 		return this->balance;
 	}
 
-	void setBalance(int val) {
+	void setBalance(float val) {
 		this->balance += val;
 	}
 
