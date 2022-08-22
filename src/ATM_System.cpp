@@ -4,7 +4,6 @@
 #include <stdlib.h>
 
 sqlite3* ATM_System::db = nullptr;
-BankSystem* bank;
 bool ativo = true;
 
 void ATM_System::system_Init()

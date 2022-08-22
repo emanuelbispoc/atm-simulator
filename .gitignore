@@ -1,3 +1,7 @@
 *.exe
 *.db
 .vs
+
+Makefile
+
+test
