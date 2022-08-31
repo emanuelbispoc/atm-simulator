@@ -1,13 +1,15 @@
 #pragma once
 
-class BankAccount
+#include "ATM_System.h"
+#include "BankSystem.h"
+
+class BankAccount : public BankSystem
 {
 private:
+
 	float balance = 0.0;
 	int accontNumber = 0;
 	const char* holder;
-
-
 
 public:
 

@@ -1,9 +1,7 @@
-#include "BankSystem.h"
 #include "BankAccount.h"
 
-BankAccount acc;
 
-static int callback(void* data, int argc, char** argv, char** azColName) {
+int callback(void* data, int argc, char** argv, char** azColName) {
 
 	int i = 0;
 

@@ -2,7 +2,10 @@
 
 #include <iostream>
 #include <string>
+
+#include "MenuNavigate.h"
 #include "sqlite3.h"
+
 
 class ATM_System
 {
@@ -30,8 +33,7 @@ public:
 		sqlite3_close(db);
 	};
 
-	~ATM_System()
-	{};
+	~ATM_System() { };
 
 	void system_Init();
 	void transferTo();

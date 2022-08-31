@@ -1,22 +1,25 @@
 #include "ATM_System.h"
-#include "handler/BankSystem.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 sqlite3* ATM_System::db = nullptr;
-bool ativo = true;
+MenuNavigate nav;
 
 void ATM_System::system_Init()
 {
+	bool ativo = true;
+	int teste = 0;
+
+
 	while (ativo) 
 	{
-		if (true) {
-			std::cout << "------------Welcome------------\n\n";
-			std::cout << "Insert your code...";      // for simulate inserting of card
-			std::cin >> code;
-
-			bank->selectData(code);
+		switch (teste)
+		{
+		case INITIAL: nav.initialMenu(); break;
+		default:
+			break;
 		}
+	
 	}
 
 };
