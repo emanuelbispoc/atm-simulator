@@ -3,7 +3,7 @@
 #include "ATM_System.h"
 #include "BankSystem.h"
 
-class BankAccount : public BankSystem
+class BankAccount
 {
 private:
 
@@ -26,7 +26,7 @@ public:
 	}
 
 	void setBalance(float val) {
-		this->balance += val;
+		this->balance = val;
 	}
 
 	void setHolder(const char* holder) {
