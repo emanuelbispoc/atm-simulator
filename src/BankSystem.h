@@ -9,10 +9,7 @@ class BankSystem
 {
 public:
 
-	BankSystem();
-	~BankSystem();
-
-	BankAccount& updateData(std::string data);
-	void selectData(std::string data); //should search only by code
+	BankAccount& selectData(std::string data); //should search only by code
+	void updateData(std::string data);
 
 };

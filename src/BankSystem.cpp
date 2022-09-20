@@ -1,6 +1,13 @@
 #include "BankSystem.h"
 
 
+/**
+*	The bank system which manage all functionalities 
+* 
+* 
+
+*/
+
 int callback(void* data, int argc, char** argv, char** azColName) {
 
 	int i = 0;
@@ -13,10 +20,10 @@ int callback(void* data, int argc, char** argv, char** azColName) {
 	return 0;
 }
 
-BankAccount BankSystem::selectData(std::string data)
+BankAccount& BankSystem::selectData(std::string data)
 {
 
-	BankAccount* account;
+	BankAccount* account = nullptr;
 	const char* sql;
 	int rc;
 	char* err;
@@ -36,15 +43,12 @@ BankAccount BankSystem::selectData(std::string data)
 	else
 	{
 		account = new BankAccount();
-		return account;
+		return *account;
 	}
+	return *account;
 }
 
 void BankSystem::updateData(std::string data)
 {
 
-}
-
-BankSystem::~BankSystem() {
-	delete account;
 }
