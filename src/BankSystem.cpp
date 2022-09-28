@@ -1,4 +1,5 @@
 #include "BankSystem.h"
+#include <vector>
 
 
 /**
@@ -7,6 +8,8 @@
 * 
 
 */
+
+std::vector<const char*> memberAccDatasHandler();
 
 int callback(void* data, int argc, char** argv, char** azColName) {
 
@@ -20,10 +23,8 @@ int callback(void* data, int argc, char** argv, char** azColName) {
 	return 0;
 }
 
-BankAccount& BankSystem::selectData(std::string data)
+std::string BankSystem::selectData(std::string data)
 {
-
-	BankAccount* account = nullptr;
 	const char* sql;
 	int rc;
 	char* err;
@@ -38,13 +39,25 @@ BankAccount& BankSystem::selectData(std::string data)
 	rc = sqlite3_exec(ATM_System::db, sql, callback, NULL, &err);
 
 	if (rc != SQLITE_OK) {
-		std::cout << err;
+		throw err;
 	}
-	else
-	{
-		account = new BankAccount();
-		return *account;
-	}
+
+	return "oi";
+}
+
+BankAccount& BankSystem::getAccount(std::string data)
+{
+
+	BankAccount* account = nullptr;
+	std::string accountDatas = "";
+
+	accountDatas = BankSystem::selectData(data);
+	if (accountDatas == "") throw "ERROR";
+
+	account = new BankAccount();
+
+
+
 	return *account;
 }
 

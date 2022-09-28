@@ -10,6 +10,6 @@ void MenuNavigate::initialMenu()
 	std::cout << "Insert your code...";      // for simulate inserting of card
 	std::cin >> code;
 
-	acc = bank.selectData(code);
+	acc = bank.getAccount(code);
 	setCurrentMenu(INITIAL);
 }
