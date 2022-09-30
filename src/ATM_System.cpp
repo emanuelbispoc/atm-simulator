@@ -8,7 +8,7 @@ MenuNavigate nav;
 void ATM_System::system_Init()
 {
 	bool ativo = true;
-	int teste = 0;
+	int teste = INITIAL;
 
 
 	while (ativo) 

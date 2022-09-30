@@ -1,12 +1,22 @@
 #ifndef TESTE
 #define TESTE
 
+
 #include <iostream>
 
-#include "sqlite3.h"	
-#include "../src/BankSystem.h"
-	
-BankSystem bank;
+#include "sqlite3.h"
+
+
+
+class ATM_Test
+{
+
+};
+
+class BankSystemTest 
+{
+
+};
 
 int main(int argc, const char* argv[]) {
 	
@@ -16,7 +26,6 @@ int main(int argc, const char* argv[]) {
 	rc = sqlite3_open("./dbtest/datas_test.db", &db);
 	if (rc) throw "ERROR ON SYSTEM:\n";
 
-	bank.getAccount("3456");
 
 	sqlite3_close(db);
 

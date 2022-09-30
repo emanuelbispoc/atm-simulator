@@ -16,6 +16,8 @@ private:
 
 public:
 
+	~MenuNavigate();
+
 	void initialMenu();
 
 	int getCurrenteMenu() { return this->currentMenu; };

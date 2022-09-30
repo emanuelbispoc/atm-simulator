@@ -1,6 +1,4 @@
 #include "BankSystem.h"
-#include <vector>
-
 
 /**
 *	The bank system which manage all functionalities 
@@ -9,7 +7,7 @@
 
 */
 
-std::vector<const char*> memberAccDatasHandler();
+AccHandlerTemp userAcc;
 
 int callback(void* data, int argc, char** argv, char** azColName) {
 
@@ -20,10 +18,12 @@ int callback(void* data, int argc, char** argv, char** azColName) {
 		std::cout << azColName[i] << " | " << argv[i] << std::endl;
 	}
 
+	userAcc.name = argv[2];
+
 	return 0;
 }
 
-std::string BankSystem::selectData(std::string data)
+void BankSystem::selectData(std::string data)
 {
 	const char* sql;
 	int rc;
@@ -41,21 +41,24 @@ std::string BankSystem::selectData(std::string data)
 	if (rc != SQLITE_OK) {
 		throw err;
 	}
-
-	return "oi";
 }
 
 BankAccount& BankSystem::getAccount(std::string data)
 {
 
 	BankAccount* account = nullptr;
-	std::string accountDatas = "";
 
-	accountDatas = BankSystem::selectData(data);
-	if (accountDatas == "") throw "ERROR";
-
-	account = new BankAccount();
-
+	BankSystem::selectData(data);
+	
+	try
+	{
+		account = new BankAccount();
+		account->setHolder(userAcc.name);
+	}
+	catch (const std::exception&)
+	{
+		throw "ERROR ON SYSTEM!";
+	}
 
 
 	return *account;

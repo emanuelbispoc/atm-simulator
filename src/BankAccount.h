@@ -12,23 +12,9 @@ private:
 
 public:
 
-	const char* getHolder() {
-		return this->holder;
-	}
-
-	int getAccountNumber() {
-		return this->accontNumber;
-	}
-
-	float getBalance() {
-		return this->balance;
-	}
-
-	void setBalance(float val) {
-		this->balance = val;
-	}
-
-	void setHolder(const char* holder) {
-		this->holder = holder;
-	}
+	const char* getHolder() { return this->holder; }
+	int getAccountNumber() { return this->accontNumber; }
+	float getBalance() { return this->balance; }
+	void setBalance(float val) { this->balance = val; }
+	void setHolder(const char* holder) { this->holder = holder; }
 };

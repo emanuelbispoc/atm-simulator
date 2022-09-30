@@ -1,7 +1,7 @@
 #include "MenuNavigate.h"
 
 
-BankSystem bank;
+BankSystem* bank = new BankSystem();;
 BankAccount acc;
 
 void MenuNavigate::initialMenu() 
@@ -10,6 +10,11 @@ void MenuNavigate::initialMenu()
 	std::cout << "Insert your code...";      // for simulate inserting of card
 	std::cin >> code;
 
-	acc = bank.getAccount(code);
+	acc = bank->getAccount(code);
+	
 	setCurrentMenu(INITIAL);
 }
+
+MenuNavigate::~MenuNavigate() {
+	delete bank;
+};
